@@ -21,9 +21,11 @@ class TempratureChart extends StatelessWidget {
                 showTitles: true,
                 getTitlesWidget: (value, meta) {
                   if (value.toInt() % 2 == 0) {
-                    return Text(
-                      '${value.toInt()} °C',
-                      style: TextStyle(fontSize: 10),
+                    return FittedBox(
+                      child: Text(
+                        '${value.toInt()} °C',
+                        style: TextStyle(fontSize: 10),
+                      ),
                     );
                   }
                   return SizedBox();
