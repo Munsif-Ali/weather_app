@@ -201,7 +201,7 @@ class _AddCityDialogState extends State<AddCityDialog> {
                 isPinned: isPin,
               );
               if (isAdded) {
-                Navigator.of(context).pop();
+                Navigator.pop(context);
               }
             }
           },

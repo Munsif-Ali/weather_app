@@ -151,7 +151,7 @@ class CitiesListProvider extends ChangeNotifier {
       await checkAndUpdateCity(city.id);
     }
     _isLoading = false;
-    notifyListeners();
+    sortCities();
   }
 
   void removeCity(int cityId) {
@@ -163,9 +163,7 @@ class CitiesListProvider extends ChangeNotifier {
   void pinCity(WeatherModel city) {
     pinnedCity = city;
     _settingsBox.put("pinnedCityId", city.id);
-    _cities.removeWhere((element) => element.id == city.id);
-    _cities.insert(0, city);
-    notifyListeners();
+    sortCities();
   }
 
   void sortCities() {
